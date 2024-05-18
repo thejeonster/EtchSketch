@@ -15,7 +15,12 @@ document.body.appendChild(popButton);
 
 const gridSize = document.querySelector('popButton')
 popButton.addEventListener("click", () => {
-    let gridRequest = prompt("Please enter a grid size: ")
+    let gridRequest = parseInt(prompt("Please enter a grid size: "))
+    if (gridRequest > 100) {
+        alert("Your input has to be less than or equal to 100!");
+    } else if (gridRequest < 0) {
+        alert("Your input has to be greater than 0!");
+    } 
 })
 
 // ----- Creates and styles 16 x 16 divs ----- //
