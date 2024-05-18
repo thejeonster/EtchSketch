@@ -20,7 +20,8 @@ popButton.addEventListener("click", () => {
         alert("Your input has to be less than or equal to 100!");
     } else if (gridRequest < 0) {
         alert("Your input has to be greater than 0!");
-    } divMaker(gridRequest, gridRequest);
+    }   divRemover();
+        divMaker(gridRequest, gridRequest);
 })
 
 // ----- Creates and styles div squares ----- //
@@ -30,6 +31,7 @@ function divMaker(x, y) {
     let j;
     for (i=0; i < x; i++) {
         const subtainer = document.createElement("div");
+        subtainer.classList.add("subtainer");
         for (j=0; j < y; j++) {
             const divNum = document.createElement("div");
             divNum.classList.add("smallSquare")
@@ -49,6 +51,16 @@ function divMaker(x, y) {
         });
     }
 } 
+
+// ----- Removes existing board and replaces with new board when "Click Me" is activated ----- //
+
+function divRemover() {
+    const squareRemove = document.querySelectorAll(".subtainer");
+
+    squareRemove.forEach((subtainer) => {
+        container.removeChild(subtainer);
+    })
+}
 
 container.style.display = "flex";
 container.style.justifyContent = "center";
