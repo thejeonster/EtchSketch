@@ -2,8 +2,11 @@
 // ----- Main Container ----- //
 
 const container = document.createElement("div");
-container.style.width = "960px";
-container.style.height = "960px";
+container.style.width = "800px";
+container.style.height = "800px";
+container.style.display = "flex";
+container.style.flexGrow = "1";
+container.style.border = "1px solid black";
 document.body.appendChild(container)
 
 // ----- Creates button asking for # of squares per side for new grid ----- // 
@@ -34,12 +37,17 @@ function divMaker(x, y) {
     for (i=0; i < x; i++) {
         const subtainer = document.createElement("div");
         subtainer.classList.add("subtainer");
+        subtainer.style.border = "1px solid black";
+        subtainer.style.display = "flex";
+        subtainer.style.flexGrow = "1";
+        subtainer.style.flexDirection = "column";
         for (j=0; j < y; j++) {
             const divNum = document.createElement("div");
             divNum.classList.add("smallSquare")
             //divNum.style.height = "40px";
             //divNum.style.width = "40px";
             divNum.style.border = "1px solid black";
+            divNum.style.flexGrow = "1";
             subtainer.appendChild(divNum);
         }   container.appendChild(subtainer);
 
