@@ -7,8 +7,16 @@ document.body.appendChild(container)
 // ----- Creates button asking for # of squares per side for new grid ----- // 
 
 const popButton = document.createElement("button");
-popButton.textContent = "Click Me"
+popButton.classList.add("gridButton");
+popButton.textContent = "Click Me";
 document.body.appendChild(popButton);
+
+// ----- Click event for popButton ----- // 
+
+const gridSize = document.querySelector('popButton')
+popButton.addEventListener("click", () => {
+    let gridRequest = prompt("Please enter a grid size: ")
+})
 
 // ----- Creates and styles 16 x 16 divs ----- //
 
