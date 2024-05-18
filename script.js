@@ -20,10 +20,10 @@ popButton.addEventListener("click", () => {
         alert("Your input has to be less than or equal to 100!");
     } else if (gridRequest < 0) {
         alert("Your input has to be greater than 0!");
-    } 
+    } divMaker(gridRequest, gridRequest);
 })
 
-// ----- Creates and styles 16 x 16 divs ----- //
+// ----- Creates and styles div squares ----- //
 
 function divMaker(x, y) {
     let i;
@@ -38,20 +38,22 @@ function divMaker(x, y) {
             divNum.style.border = "1px solid black";
             subtainer.appendChild(divNum);
         }   container.appendChild(subtainer);
+
+        // ----- Hover effect for boxes ----- // 
+
+        const squareButtons = document.querySelectorAll(".smallSquare");
+
+        squareButtons.forEach((smallSquare) => {
+        smallSquare.addEventListener("mouseover", (event) => {
+        smallSquare.style.backgroundColor = "green"});
+        });
     }
-} divMaker(16, 16);
+} 
 
 container.style.display = "flex";
 container.style.justifyContent = "center";
 
-// ----- Hover effect for boxes ----- // 
 
-const squareButtons = document.querySelectorAll(".smallSquare");
 
-squareButtons.forEach((smallSquare) => {
-    smallSquare.addEventListener("mouseover", (event) => {
-        smallSquare.style.backgroundColor = "green"
-    });
-});
 
 
