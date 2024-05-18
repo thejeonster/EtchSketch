@@ -4,13 +4,19 @@
 const container = document.createElement("div");
 document.body.appendChild(container)
 
+// ----- Creates button asking for # of squares per side for new grid ----- // 
+
+const popButton = document.createElement("button");
+popButton.textContent = "Click Me"
+document.body.appendChild(popButton);
+
 // ----- Creates and styles 16 x 16 divs ----- //
 
 function divMaker(x, y) {
     let i;
     let j;
     for (i=0; i < x; i++) {
-        const subtainer = document.createElement("div")
+        const subtainer = document.createElement("div");
         for (j=0; j < y; j++) {
             const divNum = document.createElement("div");
             divNum.classList.add("smallSquare")
@@ -34,3 +40,5 @@ squareButtons.forEach((smallSquare) => {
         smallSquare.style.backgroundColor = "green"
     });
 });
+
+
