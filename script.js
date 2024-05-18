@@ -4,7 +4,7 @@
 const container = document.createElement("div");
 document.body.appendChild(container)
 
-// ----- Creates 16 x 16 divs ----- //
+// ----- Creates and styles 16 x 16 divs ----- //
 
 function divMaker(x, y) {
     let i;
@@ -18,8 +18,19 @@ function divMaker(x, y) {
             divNum.style.width = "40px";
             divNum.style.border = "1px solid black";
             subtainer.appendChild(divNum);
-    }   container.appendChild(subtainer);
-
-}} divMaker(16, 16);
+        }   container.appendChild(subtainer);
+    }
+} divMaker(16, 16);
 
 container.style.display = "flex";
+container.style.justifyContent = "center";
+
+// ----- Hover effect for boxes ----- // 
+
+const squareButtons = document.querySelectorAll(".smallSquare");
+
+squareButtons.forEach((smallSquare) => {
+    smallSquare.addEventListener("mouseover", (event) => {
+        smallSquare.style.backgroundColor = "green"
+    });
+});
