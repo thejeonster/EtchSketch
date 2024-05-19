@@ -57,7 +57,10 @@ function divMaker(x, y) {
 
         squareButtons.forEach((smallSquare) => {
         smallSquare.addEventListener("mouseover", (event) => {
-        smallSquare.style.backgroundColor = "green"});
+        smallSquare.style.backgroundColor = `rgb(
+            ${Math.floor(Math.random() * 256)}, 
+            ${Math.floor(Math.random() * 256)}, 
+            ${Math.floor(Math.random() * 256)})`});
         });
     }
 } 
@@ -74,8 +77,3 @@ function divRemover() {
 
 container.style.display = "flex";
 container.style.justifyContent = "center";
-
-
-
-
-
